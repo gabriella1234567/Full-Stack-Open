@@ -1,12 +1,16 @@
-const Header = ({ course }) => {
+const Header = (props) => {
+  console.log(props)
   return (
-    <h1>{course.name}</h1>
+    <>
+      <h1>{props.course.name}</h1>
+    </>
   )
 }
 
-const Part = ( {part} ) => {
+const Part = (props) => {
+  console.log(props)
   return (
-    <p>{part.name} {part.exercises}</p>
+    <h1>{course}</h1>
   )
 }
 
