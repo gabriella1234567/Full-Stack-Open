@@ -1,26 +1,33 @@
 import { useState } from 'react'
 
 const App = () => {
-  const [clicks, setClicks] = useState({
-    left: 0,
-    right: 0
-  })
+  const [left, setLeft] = useState(0)
+  const [right, setRight] = useState(0)
+  // Every click is stored in a separate piece of state called allClicks that is initialized as an empty array
+  const [allClicks, setAll] = useState([])
 
-// Simplified structure for handling clicks with an object newClicks as objects do not need to be assigned to a variable in event handlers. 
-  const handleLeftClick = () => setClicks({...clicks, left: clicks.left + 1})
 
-  const handleRightClick = () => setClicks({...clicks, right: clicks.right + 1})
+  const handleLeftClick = () => {
+    setAll(allClicks.concat('L'))
+    setLeft(left + 1)
+  }
+
+  const handleRightClick = () => {
+    setAll(allClicks.concat('R'))
+    setRight(right + 1)
+  }
 
   return (
-    <div className="button">
-      {clicks.left}
+    <div>
+      {left}
       <button onClick={handleLeftClick}>
         left
       </button>
       <button onClick={handleRightClick}>
         right
       </button>
-      {clicks.right}
+      {right}
+      <p>{allClicks.join(' ')}</p>
     </div>
   )
 }
