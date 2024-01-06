@@ -40,6 +40,10 @@ const App = () => {
     setTotal(updatedLeft + right)
   }
 
+  // Add "debugger" to code to create a breakpoint, code can then be inspected until bug is found. This can also be done by going into sources in devtools
+  // debugger
+
+
   const handleRightClick = () => {
     setAll(allClicks.concat('R'))
     const updatedRight = right + 1
